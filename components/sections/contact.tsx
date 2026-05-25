@@ -1,7 +1,8 @@
 "use client";
 import { useState } from "react";
 import { site } from "@/data/site";
-import { Mail, Link as LinkIcon, Code2, Briefcase } from "lucide-react";
+import { Mail, Briefcase } from "lucide-react";
+import { LinkedInIcon, GitHubIcon } from "@/components/ui/brand-icons";
 
 export function Contact() {
   const [state, setState] = useState<"idle" | "sending" | "sent" | "error">("idle");
@@ -23,8 +24,8 @@ export function Contact() {
         <div>
           <div className="space-y-3 text-sm">
             <a href={`mailto:${site.email}`} className="flex items-center gap-3 text-text-muted hover:text-text"><Mail size={16}/> {site.email}</a>
-            <a href={site.socials.linkedin} className="flex items-center gap-3 text-text-muted hover:text-text"><LinkIcon size={16}/> LinkedIn</a>
-            <a href={site.socials.github} className="flex items-center gap-3 text-text-muted hover:text-text"><Code2 size={16}/> GitHub</a>
+            <a href={site.socials.linkedin} className="flex items-center gap-3 text-text-muted hover:text-text"><LinkedInIcon size={16}/> LinkedIn</a>
+            <a href={site.socials.github} className="flex items-center gap-3 text-text-muted hover:text-text"><GitHubIcon size={16}/> GitHub</a>
             <a href={site.socials.upwork} className="flex items-center gap-3 text-text-muted hover:text-text"><Briefcase size={16}/> Upwork</a>
           </div>
         </div>
