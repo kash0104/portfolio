@@ -16,7 +16,7 @@ export function Hero() {
         style={{ background: "radial-gradient(circle, var(--color-accent-2), transparent 60%)", animation: "var(--animate-blob)", animationDelay: "-9s" }}
       />
 
-      <div className="relative">
+      <div className="relative reveal in-view">
         {/* Availability pill */}
         <div className="inline-flex items-center gap-2 px-3 py-1 border border-border bg-surface/60 backdrop-blur rounded-full text-xs">
           <span
@@ -27,12 +27,18 @@ export function Hero() {
           <span className="text-text-muted font-mono">Available for work</span>
         </div>
 
-        <p className="mt-6 font-mono text-xs text-text-dim"><TerminalPrompt>whoami</TerminalPrompt></p>
-        <h1 className="mt-4 text-5xl md:text-7xl font-semibold tracking-tight leading-[1.05] text-gradient">
-          {site.name}
+        <p className="mt-6 font-mono text-xs uppercase tracking-[0.2em] text-accent">
+          {site.role}
+        </p>
+        <h1 className="mt-3 text-5xl md:text-7xl font-semibold tracking-tight leading-[1.05]">
+          Hi, I&apos;m <span className="text-gradient-accent">Kashyap</span>.
         </h1>
-        <p className="mt-4 font-mono text-accent text-sm md:text-base">{`// ${site.role.toLowerCase()}`}</p>
-        <p className="mt-6 max-w-2xl text-text-muted md:text-lg leading-relaxed">{site.description}</p>
+        <p className="mt-5 font-mono text-sm text-text-muted">
+          <TerminalPrompt>cat about.txt</TerminalPrompt>
+        </p>
+        <p className="mt-4 max-w-2xl text-text-muted md:text-lg leading-relaxed">
+          {site.description}
+        </p>
         <div className="mt-10 flex flex-wrap gap-3">
           <a
             href="#projects"

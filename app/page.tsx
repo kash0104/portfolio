@@ -1,5 +1,6 @@
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
+import { Reveal } from "@/components/ui/reveal";
 import { Hero } from "@/components/sections/hero";
 import { About } from "@/components/sections/about";
 import { StatsStrip } from "@/components/sections/stats-strip";
@@ -17,15 +18,15 @@ export default function Home() {
       <Nav />
       <main className="max-w-[1100px] mx-auto px-6 md:px-10">
         <Hero />
-        <About />
-        <StatsStrip />
-        <TechStack />
-        <FeaturedProjects />
-        <Experience />
-        <Services />
-        <Certifications />
-        <Schedule />
-        <Contact />
+        <Reveal><About /></Reveal>
+        <Reveal><StatsStrip /></Reveal>
+        <Reveal><TechStack /></Reveal>
+        <Reveal><FeaturedProjects /></Reveal>
+        <Reveal><Experience /></Reveal>
+        <Reveal><Services /></Reveal>
+        <Reveal><Certifications /></Reveal>
+        <Reveal><Schedule /></Reveal>
+        <Reveal><Contact /></Reveal>
       </main>
       <Footer />
     </>
