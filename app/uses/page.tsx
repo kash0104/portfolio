@@ -1,5 +1,4 @@
 import { Nav } from "@/components/nav";
-import { Footer } from "@/components/footer";
 
 export const metadata = { title: "Uses" };
 
@@ -22,7 +21,6 @@ export default function Uses() {
           <li>DBeaver for SQL · ChatGPT/Claude for rubber-ducking</li>
         </ul>
       </main>
-      <Footer />
     </>
   );
 }

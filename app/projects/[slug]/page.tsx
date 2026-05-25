@@ -2,7 +2,6 @@ import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { getAllProjects, getProjectBySlug } from "@/lib/mdx";
 import { Nav } from "@/components/nav";
-import { Footer } from "@/components/footer";
 import { TechBadge } from "@/components/ui/tech-badge";
 import { site } from "@/data/site";
 
@@ -53,7 +52,6 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           <MDXRemote source={project.body} />
         </article>
       </main>
-      <Footer />
     </>
   );
 }

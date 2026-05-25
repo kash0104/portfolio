@@ -1,5 +1,4 @@
 import { Nav } from "@/components/nav";
-import { Footer } from "@/components/footer";
 import { Reveal } from "@/components/ui/reveal";
 import { Marquee } from "@/components/ui/marquee";
 import { Hero } from "@/components/sections/hero";
@@ -23,15 +22,16 @@ export default function Home() {
         <Reveal><StatsStrip /></Reveal>
         <Reveal><TechStack /></Reveal>
         <Reveal><FeaturedProjects /></Reveal>
+      </main>
+      {/* Full-bleed tech marquee between Projects and Experience */}
+      <Marquee />
+      <main className="max-w-[1100px] mx-auto px-6 md:px-10">
         <Reveal><Experience /></Reveal>
         <Reveal><Services /></Reveal>
         <Reveal><Certifications /></Reveal>
         <Reveal><Schedule /></Reveal>
         <Reveal><Contact /></Reveal>
       </main>
-      {/* Full-bleed marquee strip above the footer */}
-      <Marquee />
-      <Footer />
     </>
   );
 }
