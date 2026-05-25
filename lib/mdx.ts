@@ -40,3 +40,33 @@ export function getProjectBySlug(slug: string): Project | undefined {
 export function getFeaturedProjects(): Project[] {
   return getAllProjects().filter((p) => p.featured);
 }
+
+const postFrontmatterSchema = z.object({
+  title: z.string(),
+  slug: z.string(),
+  summary: z.string(),
+  date: z.string(),
+  tags: z.array(z.string()).optional(),
+  draft: z.boolean().optional(),
+});
+export type PostFrontmatter = z.infer<typeof postFrontmatterSchema>;
+export type Post = PostFrontmatter & { body: string };
+
+const postsDir = path.join(process.cwd(), "content/blog");
+
+export function getAllPosts(): Post[] {
+  if (!fs.existsSync(postsDir)) return [];
+  const files = fs.readdirSync(postsDir).filter((f) => f.endsWith(".mdx"));
+  return files
+    .map((file) => {
+      const raw = fs.readFileSync(path.join(postsDir, file), "utf8");
+      const { data, content } = matter(raw);
+      return { ...postFrontmatterSchema.parse(data), body: content };
+    })
+    .filter((p) => !p.draft)
+    .sort((a, b) => (a.date < b.date ? 1 : -1));
+}
+
+export function getPostBySlug(slug: string): Post | undefined {
+  return getAllPosts().find((p) => p.slug === slug);
+}
