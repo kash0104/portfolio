@@ -20,6 +20,8 @@
   --animate-fade-in-up: fade-in-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   --animate-fade-in: fade-in 0.6s ease-out forwards;
   --animate-blink: blink 1s steps(2, start) infinite;
+  --animate-gradient-shift: gradient-shift 7s ease-in-out infinite;
+  --animate-divider-grow: divider-grow 1s ease-out forwards;
 
   @keyframes blob {
     0%, 100% { transform: translate(0px, 0px) scale(1); }
@@ -44,6 +46,16 @@
 
   @keyframes blink {
     50% { opacity: 0; }
+  }
+
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  @keyframes divider-grow {
+    from { transform: scaleX(0); transform-origin: left; }
+    to { transform: scaleX(1); transform-origin: left; }
   }
 }
 
@@ -101,7 +113,24 @@
     background-clip: text;
     color: transparent;
   }
+  .text-gradient-accent-animated {
+    background: linear-gradient(
+      135deg,
+      var(--color-accent) 0%,
+      var(--color-accent-2) 50%,
+      var(--color-accent) 100%
+    );
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: var(--animate-gradient-shift);
+  }
 }
+
+/* Increase stagger reach for grids with more children (services has 4, tech-stack has 6) */
+.reveal-stagger.in-view > *:nth-child(7) { animation-delay: 480ms; }
+.reveal-stagger.in-view > *:nth-child(8) { animation-delay: 560ms; }
 
 @media (prefers-reduced-motion: reduce) {
   *,

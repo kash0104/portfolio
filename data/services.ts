@@ -1,5 +1,5 @@
 import type { LucideIcon } from "lucide-react";
-import { ClipboardCheck, Database, Cloud } from "lucide-react";
+import { ClipboardCheck, Database, Cloud, ArrowRightLeft } from "lucide-react";
 
 export const services: { icon: LucideIcon; title: string; body: string }[] = [
   {
@@ -13,8 +13,13 @@ export const services: { icon: LucideIcon; title: string; body: string }[] = [
     body: "Greenfield dbt project on Snowflake with CI/CD, incremental models, tests, and documentation — ready for your team to extend.",
   },
   {
+    icon: ArrowRightLeft,
+    title: "Data Migration",
+    body: "Move data between warehouses, clouds, or on-prem to AWS/Snowflake. Includes CDC bootstrap, parallel-run validation, and cutover plan.",
+  },
+  {
     icon: Cloud,
-    title: "Cloud Data Migration",
-    body: "Migrate from legacy ETL or warehouse to AWS + Snowflake (or Iceberg). Includes parallel-run validation and cutover plan.",
+    title: "Cloud Data Architecture",
+    body: "Design scalable AWS + Snowflake (or Iceberg) data platforms — ingestion, orchestration, observability, and cost controls baked in.",
   },
 ];

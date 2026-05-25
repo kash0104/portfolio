@@ -1,6 +1,7 @@
 import { services } from "@/data/services";
 import { ServiceCard } from "@/components/ui/service-card";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { Reveal } from "@/components/ui/reveal";
 
 export function Services() {
   return (
@@ -10,9 +11,11 @@ export function Services() {
         label="services"
         subtitle="Available for selective freelance engagements. Typical timelines 2–8 weeks."
       />
-      <div className="grid md:grid-cols-3 gap-4">
-        {services.map((s) => <ServiceCard key={s.title} {...s} />)}
-      </div>
+      <Reveal stagger>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {services.map((s) => <ServiceCard key={s.title} {...s} />)}
+        </div>
+      </Reveal>
     </section>
   );
 }

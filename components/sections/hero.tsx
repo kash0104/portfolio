@@ -31,7 +31,7 @@ export function Hero() {
           {site.role}
         </p>
         <h1 className="mt-3 text-5xl md:text-7xl font-semibold tracking-tight leading-[1.05]">
-          Hi, I&apos;m <span className="text-gradient-accent">Kashyap</span>.
+          Hi, I&apos;m <span className="text-gradient-accent-animated">Kashyap</span>.
         </h1>
         <p className="mt-5 font-mono text-sm text-text-muted">
           <TerminalPrompt>cat about.txt</TerminalPrompt>
