@@ -8,7 +8,6 @@ import { FeaturedProjects } from "@/components/sections/featured-projects";
 import { Experience } from "@/components/sections/experience";
 import { Services } from "@/components/sections/services";
 import { Certifications } from "@/components/sections/certifications";
-import { BlogTeaser } from "@/components/sections/blog-teaser";
 import { Schedule } from "@/components/sections/schedule";
 import { Contact } from "@/components/sections/contact";
 
@@ -25,7 +24,6 @@ export default function Home() {
         <Experience />
         <Services />
         <Certifications />
-        <BlogTeaser />
         <Schedule />
         <Contact />
       </main>
