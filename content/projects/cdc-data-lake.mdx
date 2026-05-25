@@ -1,0 +1,31 @@
+---
+title: "Multi-Tenant CDC Data Lake Architecture"
+slug: "cdc-data-lake"
+summary: "Event-driven CDC ingestion from 1000+ client databases into an Apache Iceberg lake."
+role: "Senior Data Engineer · Architecture Lead"
+date: "2025-08-01"
+stack: ["AWS DMS", "S3", "SQS", "Lambda", "AWS Glue", "Apache Iceberg", "DynamoDB", "EventBridge", "Snowflake"]
+metrics:
+  - { label: "Glue jobs eliminated", value: "~60%" }
+  - { label: "Snowflake storage saved", value: "~30%" }
+  - { label: "DMS performance gain", value: "35%" }
+featured: true
+---
+
+## Problem
+Table-level Glue jobs opened 100+ concurrent JDBC connections across 1000+ client databases, hit connection limits, and caused ingestion failures at scale.
+
+## Architecture
+`AWS DMS → S3 → SQS → Lambda → Glue → Apache Iceberg`. DMS streams CDC events; Lambda routes them; Glue lands them as Iceberg tables that Snowflake queries via external tables.
+
+## Key Decisions
+- Replaced table-level Glue jobs with **event-driven CDC**, removing the connection bottleneck.
+- Fault-tolerant recovery via **DynamoDB + EventBridge + Lambda** to track and re-drive failed Glue jobs.
+- Tuned DMS streams for **CPU efficiency** on minimal instance sizes — 35% gain.
+- Migrated Snowflake-native tables to **Iceberg on S3**, separating storage from compute.
+
+## Outcomes
+~60% fewer Glue executions, ~30% storage cost reduction, dramatically reduced ingestion failures.
+
+## Reflection
+With more time I'd add lineage instrumentation (OpenLineage / DataHub) and a per-tenant SLO dashboard.

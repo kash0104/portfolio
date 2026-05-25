@@ -1,0 +1,27 @@
+---
+title: "Scalable E-commerce Analytics Platform"
+slug: "ecom-analytics"
+summary: "ELT platform integrating 6+ e-commerce data sources into Snowflake + dbt + Looker."
+role: "Senior Data Engineer"
+date: "2024-12-01"
+stack: ["Fivetran", "Snowflake", "dbt", "Shopify", "Amazon", "Google Ads", "Meta Ads", "Google Sheets", "Looker"]
+metrics:
+  - { label: "Compute + runtime cut", value: "~40%" }
+  - { label: "Data sources integrated", value: "6+" }
+  - { label: "Dashboards delivered", value: "3" }
+featured: true
+---
+
+## Problem
+Marketing and inventory data lived in 6+ disconnected sources. Reporting was manual and stale; legacy dbt models ran nightly and were expensive.
+
+## Architecture
+Fivetran ingests Shopify, Amazon, Google & Meta Ads, and Google Sheets/Drive into Snowflake. dbt transforms staging → marts. Looker dashboards land for stakeholders.
+
+## Key Decisions
+- Re-architected legacy dbt into **incremental models** — ~40% reduction in compute + runtime.
+- Built **automated validation + monitoring** so quality issues surface before stakeholders see them.
+- Modeled marts around three audiences: inventory, sales performance, marketing ROI.
+
+## Outcomes
+Faster decisions for stakeholders, lower Snowflake spend, far fewer data-quality fire drills.

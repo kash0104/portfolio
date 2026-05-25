@@ -1,0 +1,29 @@
+---
+title: "Real-time E-commerce Lakehouse (Showcase)"
+slug: "realtime-lakehouse"
+summary: "Open-source end-to-end streaming lakehouse: Kinesis → Iceberg → Snowflake → dbt → Streamlit."
+role: "Solo build"
+date: "2026-05-25"
+stack: ["Python", "Kinesis", "Lambda", "S3", "Apache Iceberg", "AWS Glue", "Step Functions", "Snowflake", "dbt", "Streamlit", "Terraform"]
+metrics:
+  - { label: "Build status", value: "In progress" }
+  - { label: "Stack breadth", value: "Full lakehouse" }
+  - { label: "License", value: "MIT" }
+githubUrl: "https://github.com/kash0104/realtime-lakehouse"
+featured: true
+---
+
+## Why
+A buildable, public reference for a real-time lakehouse using only managed AWS + Snowflake + dbt. Demonstrates the full stack end-to-end and stays cheap to run.
+
+## Architecture
+1. Mock Shopify event generator (Python Faker) streams orders to **Kinesis Data Streams**.
+2. **Lambda** writes to **S3 in Iceberg format** via the Glue catalog.
+3. **Step Functions** orchestrate **Glue** bronze → silver → gold jobs.
+4. **Snowflake** queries Iceberg via external tables; **dbt** layers staging + marts.
+5. **Streamlit** dashboard reads from Snowflake.
+
+## Status
+Repo is being seeded; this page links to it as artefacts land (Terraform modules, dbt project, CI workflow, cost analysis writeup).
+
+[GitHub repo →](https://github.com/kash0104/realtime-lakehouse)
