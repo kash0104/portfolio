@@ -6,7 +6,6 @@ export function Schedule() {
   return (
     <section id="schedule" className="py-20">
       <SectionHeading
-        number="07"
         label="schedule"
         subtitle="30-min intro call — talk through your project scope."
       />

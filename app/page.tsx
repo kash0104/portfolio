@@ -1,6 +1,7 @@
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { Reveal } from "@/components/ui/reveal";
+import { Marquee } from "@/components/ui/marquee";
 import { Hero } from "@/components/sections/hero";
 import { About } from "@/components/sections/about";
 import { StatsStrip } from "@/components/sections/stats-strip";
@@ -28,6 +29,8 @@ export default function Home() {
         <Reveal><Schedule /></Reveal>
         <Reveal><Contact /></Reveal>
       </main>
+      {/* Full-bleed marquee strip above the footer */}
+      <Marquee />
       <Footer />
     </>
   );

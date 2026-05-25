@@ -26,7 +26,6 @@ export function Contact() {
   return (
     <section id="contact" className="py-20">
       <SectionHeading
-        number="08"
         label="contact"
         title="Let's build something together."
         subtitle="Got a data platform to scale, or a pipeline that needs an audit? Drop a line."

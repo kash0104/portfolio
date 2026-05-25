@@ -7,7 +7,6 @@ export function Services() {
   return (
     <section id="services" className="py-20">
       <SectionHeading
-        number="05"
         label="services"
         subtitle="Available for selective freelance engagements. Typical timelines 2–8 weeks."
       />

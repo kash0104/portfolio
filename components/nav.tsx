@@ -15,10 +15,9 @@ export function Nav() {
           <span className="text-accent">$</span> kashyap.vadhel
         </Link>
         <div className="hidden md:flex gap-7 text-sm text-text-muted">
-          {links.map((l, i) => (
+          {links.map((l) => (
             <a key={l.href} href={l.href} className="hover:text-text transition-colors">
-              <span className="text-accent font-mono text-xs">0{i + 1}.</span>{" "}
-              <span>{l.label}</span>
+              {l.label}
             </a>
           ))}
         </div>

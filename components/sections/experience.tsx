@@ -5,7 +5,7 @@ import { SectionHeading } from "@/components/ui/section-heading";
 export function Experience() {
   return (
     <section id="experience" className="py-20">
-      <SectionHeading number="04" label="experience" />
+      <SectionHeading label="experience" />
       <ul className="max-w-3xl">
         {experience.map((e) => <TimelineItem key={e.role + e.period} {...e} />)}
       </ul>

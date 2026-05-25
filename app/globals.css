@@ -57,6 +57,53 @@
     from { transform: scaleX(0); transform-origin: left; }
     to { transform: scaleX(1); transform-origin: left; }
   }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+}
+
+/* Marquee track — width auto so the two copies sit side-by-side */
+.marquee-track {
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* Tilt card — mouse-driven 3D transform */
+.tilt-card {
+  transform: perspective(900px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+  transform-style: preserve-3d;
+  transition: transform 120ms ease-out, border-color 200ms ease-out, box-shadow 200ms ease-out;
+  will-change: transform;
+}
+.tilt-card:hover {
+  box-shadow: 0 20px 40px -20px rgba(16, 185, 129, 0.15);
+}
+/* Mouse-following soft glow */
+.tilt-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    240px circle at var(--glow-x, 50%) var(--glow-y, 50%),
+    rgba(16, 185, 129, 0.10),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 200ms ease-out;
+  pointer-events: none;
+}
+.tilt-card:hover .tilt-glow {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+  .tilt-card { transform: none !important; }
 }
 
 /* Scroll-reveal: hidden until JS toggles .in-view */

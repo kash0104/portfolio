@@ -6,7 +6,7 @@ import { Award } from "lucide-react";
 export function Certifications() {
   return (
     <section id="certifications" className="py-20">
-      <SectionHeading number="06" label="certifications" />
+      <SectionHeading label="certifications" />
       <Reveal stagger>
         <div className="grid md:grid-cols-2 gap-4">
           {certifications.map((c) => (

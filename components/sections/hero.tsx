@@ -1,4 +1,3 @@
-import { TerminalPrompt } from "@/components/ui/terminal-prompt";
 import { site } from "@/data/site";
 
 export function Hero() {
@@ -33,10 +32,7 @@ export function Hero() {
         <h1 className="mt-3 text-5xl md:text-7xl font-semibold tracking-tight leading-[1.05]">
           Hi, I&apos;m <span className="text-gradient-accent-animated">Kashyap</span>.
         </h1>
-        <p className="mt-5 font-mono text-sm text-text-muted">
-          <TerminalPrompt>cat about.txt</TerminalPrompt>
-        </p>
-        <p className="mt-4 max-w-2xl text-text-muted md:text-lg leading-relaxed">
+        <p className="mt-6 max-w-2xl text-text-muted md:text-lg leading-relaxed">
           {site.description}
         </p>
         <div className="mt-10 flex flex-wrap gap-3">

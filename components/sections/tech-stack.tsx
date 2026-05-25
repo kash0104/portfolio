@@ -6,7 +6,7 @@ import { Reveal } from "@/components/ui/reveal";
 export function TechStack() {
   return (
     <section id="stack" className="py-20">
-      <SectionHeading number="02" label="stack" />
+      <SectionHeading label="stack" />
       <Reveal stagger>
         <div className="grid md:grid-cols-2 gap-x-10 gap-y-8">
           {skillGroups.map((g) => (
